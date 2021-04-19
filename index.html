@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <title>PB的网站</title>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no" />    
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <body background="fl.png">   
+	<i>  <h1  style="color: blue">PB的网站</h1></i>
+	<b><h3      style=      "color:Green"onclick        ="alert('1.修复一些bug    2.更新了看板娘，     3.更换背景图片      4.更新鼠标点击动画')">更新公告（点击查看）</h3></b>
+	<b>  <p   style="color: red">嘿，欢迎来到我的网站</p></b>
+	<b>  <p   style="color: red">这里是pb的个人私有网站</p></b>
+	<b>  <p   style="color: red">在这里你会有很大的收获</p></b>
+	<b>	  <p   style="color: red">啥？你问这个网站干啥的？<br></p></b>
+	<b>   <p     style="color: red">……当然我图一乐的啊</p></b>
+	<b>   <p      style="color: red">害，开玩笑的，本站当然也有好东西<br>看下面👇</p></b>
+
+		<ul>
+		  <li><a href="https://pb321654.github.io/ku1-1-/">实用工具（可用)</a>
+		  <li><a href="填网址"onclick="alert('本功能不可用')">辅助工具（不可用）</a>
+		  <li><a href="https://pb321654.github.io/ku-1-2-/">PB视频网（可用）</a>
+		  <li><a href="填网址"onclick="alert('本功能不可用')">小游戏（不可用）</a>
+		</ul>		
+	<b><p style="color: pink">由于本站处于开发状态，暂无法提供更多资源，本站为预览版仅开放部分功能～(￣▽￣～)~</p></b>
+	<b>    <p style="color:pink">作者：PB <br>作者邮箱:<br>pangbinniubi@163.com</p></b>
+	
+           <script>
+			 alert("欢迎进入PB的网站");
+			 (function(window,document,undefined){
+			
+
+			 var hearts = [];
+			
+			 
+window.requestAnimationFrame = (function(){
+				
+
+			 return window.requestAnimationFrame ||
+				
+			 
+window.webkitRequestAnimationFrame ||
+				
+			 
+window.mozRequestAnimationFrame ||
+				
+			 
+window.oRequestAnimationFrame ||
+		
+			 
+window.msRequestAnimationFrame ||
+				
+			 
+function (callback){
+					
+			 
+setTimeout(callback,1000/60);
+				
+			 
+}
+			
+			 
+})();
+			
+			 
+init();
+			
+			 
+function init(){
+				
+			 
+css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+				
+			 
+attachEvent();
+				
+
+			 gameloop();
+			
+
+			 }
+			
+			 
+function gameloop(){
+				
+			 
+for(var i=0;i<hearts.length;i++){
+					
+			 
+if(hearts[i].alpha <=0){
+						
+			 
+document.body.removeChild(hearts[i].el);
+						
+			 
+hearts.splice(i,1);
+						
+			 
+continue;
+					
+			 
+}
+					
+			 
+hearts[i].y--;
+					
+			 
+hearts[i].scale += 0.004;
+					
+			 
+hearts[i].alpha -= 0.013;
+					
+			 
+hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+				
+
+			 }
+				
+
+			 requestAnimationFrame(gameloop);
+			
+
+			 }
+			
+
+			 function attachEvent(){
+				
+			 
+var old = typeof window.onclick==="function" && window.onclick;
+				
+
+			 window.onclick = function(event){
+					
+			 
+old && old();
+					
+			 
+createHeart(event);
+				
+
+			 }
+			
+
+			 }
+		
+			 
+function createHeart(event){
+				
+			 
+var d = document.createElement("div");
+				
+			 
+d.className = "heart";
+				
+			 
+hearts.push({
+					
+			 
+el : d,
+					
+			 
+x : event.clientX - 5,
+					
+			 
+y : event.clientY - 5,
+					
+			 
+scale : 1,
+					
+			 
+alpha : 1,
+					
+			 
+color : randomColor()
+				
+			 
+});
+				
+			 
+document.body.appendChild(d);
+			
+
+			 }
+			
+			 
+function css(css){
+				
+
+			 var style = document.createElement("style");
+				
+			 
+style.type="text/css";
+				
+			 
+try{
+					
+			 
+style.appendChild(document.createTextNode(css));
+				
+
+			 }catch(ex){
+					
+
+			 style.styleSheet.cssText = css;
+				
+			 
+}
+				
+			 
+document.getElementsByTagName('head')[0].appendChild(style);
+			
+
+			 }
+			
+
+			 function randomColor(){
+				
+			 
+return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";			 
+}			 
+})(window,document);  
+</script>
+
+	<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+//jsonpath控制显示那个小萝莉模型，
+//(切换模型需要改动)
+//"https://unpkg.com/(live2d-widget-model-koharu)@1.0.5/assets/(koharu).model.json"
+            jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right", //看板娘的表现位置
+            "width": 60,  //小萝莉的宽度
+            "height": 120, //小萝莉的高度
+            "hOffset": 0,
+            "vOffset": -20
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.7,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+
+  </body>
+</html>		
