@@ -1,0 +1,7 @@
+gitment:
+  enable: true
+  githubID: yourid
+  repo: yourrepo
+  ClientID: 2b3f581ae48c5fdb63b0
+  ClientSecret: 8efce4e927159f84d42fbb92b2cea52856bc1512
+  lazy: true
